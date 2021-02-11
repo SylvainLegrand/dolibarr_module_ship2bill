@@ -54,8 +54,10 @@ class modShip2bill extends DolibarrModules
 		$this->name = preg_replace('/^mod/i','',get_class($this));
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "Module permettant de regrouper plusieurs expéditions en une seule facture";
+		$this->editor_name = 'ATM Consulting';
+		$this->editor_url = 'https://www.atm-consulting.fr';
 		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = '1.5.4';
+		$this->version = '1.6.0';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Where to store the module in setup page (0=common,1=interface,2=others,3=very specific)
@@ -179,7 +181,7 @@ class modShip2bill extends DolibarrModules
 		$r=0;
 
 		$langs->load('ship2bill@ship2bill');
-		
+
 		$this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=products,fk_leftmenu=sendings',		    // Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
 								'type'=>'left',			                // This is a Left menu entry
 								'titre'=>$langs->trans('Ship2BillMenu'),
